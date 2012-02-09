@@ -31,6 +31,25 @@
 				android:textSize="16sp"
 				android:text="@string/cs_settings"/>
 		</RelativeLayout>
+		<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/layout_title_root">
+			<ImageView android:id="@+id/panel_title_header"
+				android:src="@drawable/activity_title_bar"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:scaleType="fitXY"/>
+			<TextView android:id="@+id/panelTitle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="5dp"
+				android:textColor="#ffffff"
+				android:gravity="center_vertical"
+				android:textStyle="bold"
+				android:textSize="14sp"
+				android:text="@string/general_settings"/>
+		</RelativeLayout>
 
 		<RelativeLayout
 				android:layout_width="fill_parent"
@@ -51,6 +70,19 @@
 				android:textSize="14sp"
 				android:text="@string/panel_title"/>
 		</RelativeLayout>
+        
+        <CheckBox
+                android:id="@+id/general_start_on_boot_button"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/general_start_on_boot"/>
+
+		<View   android:id="@+id/separator1"
+				android:layout_width="fill_parent"
+				android:layout_height="1dip"
+				android:layout_marginTop="5dp"
+				android:background="#404040" />
 
 		<Spinner android:id="@+id/viewSpin1"
 				android:layout_width="fill_parent"

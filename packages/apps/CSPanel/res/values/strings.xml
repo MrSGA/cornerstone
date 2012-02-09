@@ -10,4 +10,6 @@
     <string name="panel_title">Set Default Applications</string>
     <string name="cs_settings">Cornerstone Settings</string>
 	<string name="empty_str"></string>
+    <string name="general_settings">General Settings</string>
+    <string name="general_start_on_boot">Start on boot</string>
 </resources>

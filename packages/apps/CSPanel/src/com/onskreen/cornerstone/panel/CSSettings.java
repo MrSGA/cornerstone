@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.TextView;
 import android.widget.ListView;
@@ -44,7 +46,7 @@ public class CSSettings extends Activity {
         final Context context = getApplicationContext();
         final PackageManager pm = this.getPackageManager();
 
-        final SharedPreferences settings = getSharedPreferences(CS_PREFS, 4);
+        final SharedPreferences settings = getSharedPreferences(CS_PREFS, Context.MODE_MULTI_PROCESS);
         final SharedPreferences.Editor editor = settings.edit();
 
         String panel0 = settings.getString("panel0", null);
@@ -120,6 +122,17 @@ public class CSSettings extends Activity {
 		if(index != -1){
 			spinner2.setSelection(index);
 		}
+		
+		CheckBox startOnBoot = (CheckBox) findViewById(R.id.general_start_on_boot_button);
+		startOnBoot.setChecked(settings.getBoolean("start_on_boot",
+		        getResources().getBoolean(R.bool.start_on_boot)));
+		startOnBoot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean("start_on_boot", isChecked);
+                editor.commit();
+            }
+		});
     }
 
     void showToast(CharSequence msg) {
